@@ -25,7 +25,7 @@ plot_random_densities = function(counts, colors){
     }
     legend(x="right", y=.92,
         legend=paste(counts, "observations"), cex=.8, lty=1,
-        col=c("blue", "yellow", "green", "red"), box.lty=0)
+        col=colors, box.lty=0)
 }
 
 main = function(){
