@@ -17,7 +17,7 @@ plot_random_densities = function(){
     for(i in c(30, 100, 1000, 10000)){
         randomized_average = random_average(i)
         dens = density(randomized_average)
-        deviation = sd(random_average)
+        #deviation = sd(random_average)
         #cbind(dens, deviation)
         if(!cond){
             plot(dens)
