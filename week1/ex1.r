@@ -10,24 +10,28 @@ random_average = function(count) {
     return(mu)
 }
 
-plot_random_densities = function(){
+plot_random_densities = function(counts, colors){
     cond = FALSE
-    for(i in c(30, 100, 1000, 10000)){
-        randomized_average = random_average(i)
+    for(i in 1:length(counts)){ # In R we count from 1 for some reason
+        randomized_average = random_average(counts[i])
         dens = density(randomized_average)
-        #cbind(dens, deviation)
         if(!cond){
-            plot(dens)
+            plot(dens, main="Question 1", col.main="blue", ylab="Density", xlim=c(-1, .5), ylim=c(0, 35), col=colors[i])
             cond = TRUE
         }
         else{
-            lines(dens)
+            lines(dens, col=colors[i])
         }
     }
+    legend(x="right", y=.92,
+        legend=paste(counts, "observations"), cex=.8, lty=1,
+        col=c("blue", "yellow", "green", "red"), box.lty=0)
 }
 
 main = function(){
-    plot_random_densities()
+    counts = c(10000, 1000, 100, 30)
+    colors = c("red", "green", "blue", "yellow")
+    plot_random_densities(counts, colors)
 }
 
 
