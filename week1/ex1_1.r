@@ -30,7 +30,7 @@ plot_random_densities = function(counts, colors){
 
 main = function(){
     counts = c(10000, 1000, 100, 30)
-    colors = c("red", "green", "blue", "yellow")
+    colors = c("red", "green", "blue", "black")
     plot_random_densities(counts, colors)
 }
 
